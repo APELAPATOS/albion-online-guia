@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía de Albion Online</title>
+  <style>
+    /* Fondo general */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://th.bing.com/th/id/R.440631aa818765315ed95ca2c2d710e9?rik=WKeTYul84qVk2A&pid=ImgRaw&r=0');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: red;
+    }
+
+    /* Contenedor con fondo semitransparente para contenido */
+    .content-container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px 40px;
+      border-radius: 10px;
+      margin: 40px auto;
+      max-width: 1200px;
+      color: white;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 8px;
+    }
+
+    /* Buscador */
+    #search-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #search-input {
+      width: 300px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    #search-button {
+      padding: 10px 20px;
+      background-color: #ffd700;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      color: black;
+    }
+
+    #search-button:hover {
+      background-color: #ffcc00;
+    }
+
+    /* Videos */
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .video-container iframe {
+      width: 350px;
+      height: 200px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    /* Enlace canal */
+    .channel-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #ffd700;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .channel-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Resaltar búsqueda */
+    mark {
+      background-color: #ffcc00;
+      color: black;
+      padding: 0 3px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="sidebarToggle" style="position: fixed; top: 10px; left: 10px; z-index: 1100; background:#222; color:#fff; border:none; padding:10px; cursor:pointer;">
+  ☰
+</button>
+
+<!-- Sidebar -->
+<nav id="sidebar" style="
+  position: fixed;
+  top: 0;
+  left: -250px; /* escondido inicialmente */
+  width: 250px;
+  height: 100%;
+  background-color: #111;
+  color: white;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1050;
+  overflow-y: auto;
+">
+  <ul style="list-style:none; padding: 0;">
+    <li style="padding: 15px;"><a href="#pvp" style="color: white; text-decoration:none;">PvP</a></li>
+    <li style="padding: 15px;"><a href="#pve" style="color: white; text-decoration:none;">PvE</a></li>
+    <li style="padding: 15px;"><a href="#zvz" style="color: white; text-decoration:none;">ZvZ</a></li>
+    <li style="padding: 15px;"><a href="#hellgates" style="color: white; text-decoration:none;">Hellgates</a></li>
+    <li style="padding: 15px;"><a href="#mists" style="color: white; text-decoration:none;">Mists</a></li>
+    <li style="padding: 15px;"><a href="#farmeo" style="color: white; text-decoration:none;">Farmeo</a></li>
+    <li style="padding: 15px;"><a href="#gankeo" style="color: white; text-decoration:none;">Gankeo</a></li>
+    <li style="padding: 15px;"><a href="#caminos" style="color: white; text-decoration:none;">Caminos de Avalon</a></li>
+    <li style="padding: 15px;"><a href="#mundoabierto" style="color: white; text-decoration:none;">Mundo Abierto</a></li>
+  </ul>
+</nav>
+
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const toggleBtn = document.getElementById('sidebarToggle');
+
+  toggleBtn.addEventListener('click', () => {
+    if (sidebar.style.left === '0px') {
+      sidebar.style.left = '-250px';
+    } else {
+      sidebar.style.left = '0px';
+    }
+  });
+</script>
+
+
+  <h1>Guía Completa de Albion Online</h1>
+
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Buscar tema..." />
+    <button id="search-button">Buscar</button>
+    <button id="clear-button">Limpiar</button>
+  </div>
+
+  <div class="content-container" id="content">
+    <section id="pvp">
+      <h2>🗡️ PvP (Jugador contra Jugador)
+</h2>
+
+      <p>El sistema de PvP en Albion Online es uno de los más distintivos dentro del género MMORPG debido a su mecánica de "loot completo". Esto significa que, al morir en combate contra otro jugador en zonas rojas o negras, perderás todo tu equipo y pertenencias. Esta característica convierte cada encuentro PvP en una apuesta estratégica que puede resultar en grandes ganancias o duras pérdidas. La tensión de estos combates fomenta una jugabilidad emocionante y de alto riesgo, lo cual es una parte esencial de la experiencia en Albion.
+
+Existen distintos tipos de zonas donde se puede realizar PvP, categorizadas por colores: azul, amarilla, roja y negra. En las zonas azules y amarillas, el PvP es limitado o inexistente (el daño está deshabilitado o hay penalizaciones suaves). Las zonas rojas permiten combates libres con muerte permanente del personaje, mientras que las negras, además de permitir PvP libre, no revelan la identidad de los jugadores en el registro de muerte, lo cual favorece las emboscadas y las estrategias secretas. Esta estructura de zonas permite a los jugadores elegir el nivel de riesgo que desean asumir.
+
+Albion también ofrece PvP estructurado como las arenas 5v5, donde los jugadores compiten en partidas cerradas con objetivos claros. Aquí se pueden practicar builds sin el temor de perder equipo, ideal para quienes desean mejorar su destreza sin exponerse a grandes pérdidas. Otro aspecto competitivo son los enfrentamientos de facción, donde las ciudades principales luchan por el control de territorios y recursos. Estos combates ofrecen recompensas únicas y fomentan la identidad regional dentro del juego.
+
+La preparación es clave en cualquier combate PvP. Los jugadores deben conocer bien sus builds (combinaciones de armaduras, armas, comida y pociones), así como sus contrapartes y debilidades. Además, el trabajo en equipo y la coordinación son cruciales, especialmente en combates grupales como los gankeos o batallas ZvZ. Es común que los gremios practiquen estrategias y asignen roles específicos durante los enfrentamientos.
+
+Por último, el PvP en Albion tiene un fuerte componente económico. Ganar significa obtener el botín del enemigo, pero perder implica reponer tu equipo desde cero. Esto crea un bucle económico constante donde la recolección, la fabricación y el comercio se entrelazan con la guerra. Muchos jugadores eligen especializarse solo en PvP, mientras que otros se convierten en sus proveedores, formando un ecosistema complejo y dinámico.
+</p>
+
+    <section id="pve">
+      <h2>🛡️ PvE (Jugador contra Entorno)
+</h2>
+
+      <p>El contenido PvE de Albion Online es el punto de partida para la mayoría de los jugadores, ya que permite subir de nivel, obtener equipo y aprender las mecánicas del juego en un entorno controlado. En este mundo, los jugadores se enfrentan a criaturas controladas por la inteligencia artificial (mobs), completan mazmorras y participan en expediciones. Es una forma segura de ganar fama (experiencia), recolectar botín y prepararse para los desafíos más peligrosos del juego.
+
+Las mazmorras aleatorias (Randomized Dungeons o RD) son uno de los modos más populares de PvE. Aparecen espontáneamente en el mundo y cambian cada vez que entras, lo que hace que cada experiencia sea diferente. Estas mazmorras están llenas de enemigos, cofres, y, en algunas ocasiones, jefes con mecánicas especiales. Son ideales para jugar en grupo, aunque también existen versiones individuales que ofrecen una experiencia desafiante para los solitarios.
+
+Las mazmorras estáticas, por otro lado, se encuentran en lugares fijos del mapa y suelen ser más largas y difíciles. Son un excelente lugar para grupos organizados que buscan obtener grandes cantidades de fama y recursos en menor tiempo. Estas mazmorras son frecuentadas por jugadores experimentados, y su localización fija a menudo las convierte en puntos calientes para el PvP, lo que agrega un elemento de riesgo a las recompensas.
+
+Para aquellos que buscan una experiencia más segura, las expediciones ofrecen contenido PvE instanciado dentro de las ciudades. Pueden jugarse solo o en grupo, y proporcionan fama sin riesgo de ser atacado por otros jugadores. Aunque el botín no es tan valioso como el de las mazmorras en el mundo abierto, son perfectas para subir de nivel armas y armaduras al principio del juego. Estas actividades también permiten aprender sobre agro, posicionamiento y control de multitudes sin presiones externas.
+
+Una característica clave del PvE en Albion es su importancia dentro del sistema de progresión del juego. La fama obtenida al derrotar enemigos se utiliza para desbloquear habilidades, especializaciones y niveles de poder (IP). A medida que se progresa, el jugador puede enfrentarse a contenido más desafiante, como jefes de mundo, invasiones de cofres élite y caminos del Avalon infestados de enemigos. Esta progresión continua da sentido al farmeo y mantiene el juego activo incluso para jugadores veteranos.
+</p>
+
+    <section id="zvz">
+      <h2>⚔️ ZvZ (Zerg vs Zerg)
+</h2>
+
+      <p>El contenido ZvZ (Zerg vs Zerg) en Albion Online representa uno de los aspectos más masivos y estratégicos del juego. En estas batallas, decenas o incluso cientos de jugadores de diferentes gremios se enfrentan entre sí por el control territorial, recursos o dominancia política. El término "zerg" proviene de juegos como StarCraft, y en Albion hace referencia a un gran grupo de jugadores que actúa como una sola unidad, siguiendo órdenes coordinadas por un shotcaller (líder táctico).
+
+Estas batallas suelen darse en zonas negras, territorios disputados donde las alianzas y gremios más poderosos compiten por influencia en el mapa. El objetivo principal es capturar territorios, controlar escondites o impedir el progreso del enemigo. Albion incentiva el ZvZ mediante mecánicas como los Territory Battles, Invasiones, Crystal League Battles y la lucha por Poder de Temporada, lo que convierte estas guerras en eventos recurrentes y decisivos.
+
+La preparación para un ZvZ exitoso va más allá del número de combatientes. Cada miembro debe llevar un rol específico: hay frentes de choque (tanks), daño por área de efecto (AoE DPS), sanadores y soportes. Además, la composición del equipo debe tener sinergia y el equipo adecuado, incluyendo capas, comida, pociones y armaduras con habilidades que se complementen. El "item power" (IP) colectivo del grupo influye enormemente en el resultado.
+
+La coordinación es esencial. Los shotcallers usan comandos de voz en plataformas como Discord para mover a los jugadores, sincronizar engages (inicios de combate) y hacer "rotaciones" defensivas. Un error de cálculo puede significar la pérdida de todo el equipo de 50 o más jugadores. Por esto, los gremios más exitosos entrenan con regularidad y tienen miembros dedicados a logística, escuadrones de exploración y contra-zergs (grupos pequeños que interrumpen o hostigan desde los flancos).
+
+Además del prestigio y los recursos ganados, el ZvZ tiene un componente social poderoso. Los gremios que dominan estas batallas obtienen reconocimiento, atraen reclutas valiosos y pueden establecer monopolios regionales. También es un gran espectáculo, con combates explosivos, efectos visuales caóticos y una sensación de comunidad difícil de replicar en otros modos de juego. Muchos jugadores se unen a Albion exclusivamente por la adrenalina y el compañerismo de las batallas ZvZ.
+</p>
+
+    <section id="hellgates">
+      <h2>🔥 Hellgates (Puertas del Infierno)
+</h2>
+
+      <p>Las Hellgates son uno de los contenidos híbridos más intensos de Albion Online, combinando elementos de PvP y PvE en una sola experiencia. Se accede a ellas a través de portales que aparecen en el mundo abierto, los cuales requieren un mapa infernal para activarse. Una vez dentro, los jugadores entran en un infierno dividido en secciones, donde deben luchar contra monstruos demoníacos, pero también contra otros jugadores que ingresaron por otro portal. Esto convierte cada Hellgate en un campo de batalla impredecible.
+
+Existen distintos niveles de Hellgates: 2v2, 5v5 y 10v10. Cada una está diseñada para un número específico de jugadores y tiene su propio nivel de dificultad y recompensas. Las 2v2 Hellgates son ideales para duelos rápidos, centrados en la habilidad y la sinergia entre dos builds. Las 5v5 Hellgates se parecen más a las arenas pero con el añadido de mobs, y las 10v10 son auténticas guerras entre grupos organizados, con rutas estratégicas, bosses, y zonas de combate amplias. Además, existen Hellgates letales y no letales, lo que permite practicar sin riesgo o lanzarse al combate real donde puedes perder tu equipo.
+
+Una característica destacada de las Hellgates es su diseño de mapa simétrico con múltiples rutas de acceso, lo que permite emboscadas, rotaciones y juegos mentales entre los equipos. Es vital usar bien el entorno, posicionarse correctamente y aprovechar los mobs para interrumpir o castigar al enemigo. Los equipos más experimentados controlan el ritmo del combate, usando cada rincón del infierno a su favor. A menudo, los jugadores colocan trampas cerca de los jefes o simulan retiradas para dividir al equipo contrario.
+
+El contenido PvE dentro de las Hellgates también es exigente. Los mobs demoníacos infligen mucho daño, ralentizan y aplican efectos negativos que pueden dejar vulnerable al equipo en medio de una lucha contra jugadores. Es necesario limpiar las áreas con rapidez, pero sin perder recursos, ya que cualquier momento puede estallar una pelea PvP. Las decisiones tácticas como cuándo luchar contra los enemigos del entorno y cuándo evitar el combate son claves para sobrevivir y ganar.
+
+En términos de recompensa, las Hellgates ofrecen fama elevada, fragmentos de piedra rúnica, objetos de PvP y cofres valiosos. Son también una fuente excelente de práctica para jugadores que buscan pulir sus reflejos, mecánicas de combate y trabajo en equipo. Además, ganar en Hellgates no solo significa obtener loot, sino también reconocimiento como combatientes competentes dentro de la comunidad.
+</p>
+
+    <section id="mists">
+      <h2>🌫️ The Mists (Las Nieblas)
+</h2>
+
+     <p>Las Nieblas o The Mists son una característica única y fascinante de Albion Online, funcionando como un mundo paralelo o zona instanciada donde los jugadores pueden enfrentarse en combates PvP sin las consecuencias extremas del mundo abierto. Son especialmente populares entre aquellos que buscan acción constante y oportunidades de ganar fama y recursos sin el riesgo de perder todo su equipo.
+
+Dentro de Las Nieblas, los jugadores se agrupan para formar equipos o participar en partidas tipo arena, con diferentes modos de juego que incluyen batallas de 5v5 y zonas PvP abiertas. A diferencia del mundo abierto, aquí el sistema fomenta enfrentamientos dinámicos, donde la movilidad, las tácticas y la coordinación en grupo son cruciales para la victoria. La muerte en Las Nieblas no conlleva pérdida de equipamiento, lo que la hace ideal para practicar y probar builds sin miedo.
+
+Uno de los atractivos de Las Nieblas es el sistema de ranking y temporadas, donde los jugadores compiten para escalar posiciones en tablas de clasificación, ganando premios al final de cada temporada. Esto añade un elemento competitivo permanente y un incentivo para seguir perfeccionando habilidades y estrategias. Además, la reputación que se gana aquí influye en la percepción dentro de la comunidad PvP, haciendo de este modo un campo de entrenamiento esencial para los aspirantes a jugadores PvP profesionales.
+
+Las zonas de Las Nieblas están diseñadas para ser muy dinámicas, con objetivos como capturar puntos estratégicos, defender bases o recolectar recursos. Esto crea un ambiente intenso donde los equipos deben estar siempre atentos y ser capaces de adaptarse rápidamente a los cambios del combate. Las tácticas de emboscada, control de zonas y flanqueo son comunes, y muchas partidas se deciden por pequeños detalles o errores tácticos.
+
+Finalmente, Las Nieblas también sirven como un punto de encuentro para la comunidad, donde jugadores de diferentes gremios y regiones se enfrentan en igualdad de condiciones. Es un lugar donde la habilidad individual y la coordinación grupal brillan, sin las distracciones y riesgos del mundo abierto, haciendo que la experiencia PvP sea accesible y entretenida para todos los niveles.
+</p>
+
+    <section id="farmeo">
+      <h2>🌾 Farmeo (Recolección y Economía)
+</h2>
+
+      <p>El farmeo es el pilar fundamental de la economía y progresión en Albion Online. En este juego, todo el equipamiento, armas y estructuras provienen del trabajo de los jugadores recolectando recursos, fabricando y comerciando. Por eso, entender cómo farmear eficientemente es clave para avanzar rápido y sostener una economía sólida, tanto personal como gremial.
+
+La recolección de recursos incluye la tala de árboles, minería de piedra y metales, cosecha de plantas y animales, y pesca. Cada tipo de recurso se encuentra en zonas específicas del mapa, con mayor dificultad y mejores recompensas cuanto más peligrosas sean las áreas. Las zonas amarillas y rojas son especialmente codiciadas, ya que contienen recursos de alta calidad, pero también conllevan riesgos de PvP.
+
+Farmear de forma eficiente implica no solo recoger rápido, sino también saber cuándo y dónde hacerlo. Los jugadores avanzados suelen tener rutas optimizadas para minimizar el tiempo de viaje y la exposición a ataques. Además, es importante llevar equipo adecuado que permita recolectar más rápido o resistir mejor en caso de emboscadas.
+
+La economía en Albion gira en torno a estos recursos, que se utilizan para fabricar armas, armaduras, herramientas y bienes comerciales. El mercado dentro del juego es dinámico, con precios que varían según la oferta y demanda. Esto abre un espacio para el comercio, donde los jugadores pueden especializarse en producción y venta, creando una red económica compleja y vital para el ecosistema del juego.
+
+Finalmente, el farmeo no es solo para obtener riquezas, sino también para progresar en el árbol de tecnología del juego. La fama y puntos obtenidos al recolectar recursos sirven para desbloquear nuevas herramientas, habilidades y especializaciones, permitiendo a los jugadores acceder a contenido más avanzado y competitivo.
+</p>
+
+    <section id="gankeo">
+      <h2>🎯 Gankeo (Ataques a Jugadores Individuales)
+</h2>
+
+      <p>El gankeo es una práctica muy común en Albion Online que consiste en atacar a jugadores individuales, generalmente en zonas de alto riesgo, para robar su equipo y recursos. Este modo de juego añade un componente de riesgo y recompensa que hace la experiencia mucho más intensa y estratégica.
+
+El gankeo se suele dar en zonas rojas y negras, donde el PvP es abierto y la pérdida de equipo tras la muerte es una posibilidad real. Los gankers aprovechan emboscadas, superioridad numérica o sorpresa para eliminar jugadores desprevenidos, a menudo mientras estos están realizando tareas de farmeo o exploración. La emoción de este tipo de encuentros radica en la tensión constante de ser atacado y la necesidad de estar siempre alerta.
+
+Para ser un buen ganker, es importante conocer bien las rutas y zonas frecuentes de los jugadores, así como manejar builds y equipamientos que permitan hacer ataques rápidos y efectivos. Las habilidades de movilidad y control, junto con la capacidad de escapar tras un ataque, son esenciales para maximizar las ganancias y minimizar las pérdidas.
+
+El gankeo tiene también un impacto importante en la economía y la dinámica social del juego. Los jugadores gankeados pueden formar grupos o gremios para defenderse, lo que fomenta alianzas y conflictos constantes. Además, el riesgo añadido hace que los jugadores piensen estratégicamente sobre cuándo y dónde llevar equipo valioso, equilibrando la necesidad de progresar con la seguridad.
+
+Aunque para algunos el gankeo puede ser frustrante, para otros es una fuente constante de adrenalina y un modo de juego que mantiene vivo el mundo abierto. La posibilidad de perderlo todo en cualquier momento hace que cada movimiento sea importante, incentivando la cooperación, la vigilancia y la habilidad.
+</p>
+
+    <section id="caminos-avalon">
+      <h2>🛤️ Caminos de Avalon
+</h2>
+
+      <p>Los Caminos de Avalon son rutas especiales dentro del mundo de Albion Online que conectan territorios y ofrecen grandes oportunidades para el transporte rápido, la guerra estratégica y el comercio. Estas rutas son de vital importancia para gremios y alianzas que buscan dominar territorios y controlar el flujo de recursos.
+
+Estas vías no solo sirven para desplazarse rápidamente, sino que también se convierten en zonas de conflicto frecuente, ya que su control puede otorgar ventajas tácticas y económicas. Muchos gremios establecen emboscadas en los Caminos de Avalon para interceptar caravanas enemigas o para realizar ataques sorpresa a fuerzas rivales.
+
+Además, estas rutas cuentan con checkpoints y áreas estratégicas que los jugadores pueden capturar y fortificar, lo que añade un elemento de estrategia territorial y defensa. Controlar un Camino de Avalon puede significar la diferencia entre prosperar o caer en una guerra prolongada.
+
+La importancia de estos caminos también radica en su relación con otros contenidos del juego, como las Hellgates y las zonas de ZvZ, ya que facilitan el movimiento rápido de tropas y recursos, haciendo que el juego a gran escala sea más dinámico y estratégico.
+
+Para los jugadores interesados en PvP y en la política de gremios, dominar los Caminos de Avalon es una meta fundamental, ya que garantiza influencia y acceso a recursos exclusivos, además de ser un símbolo de poder dentro de la comunidad.
+</p>
+
+    <section id="mundo-abierto">
+      <h2>🌍 Mundo Abierto
+</h2>
+
+      <p> El Mundo Abierto de Albion Online es el núcleo del juego, un vasto territorio donde convergen todas las actividades y experiencias del jugador. Aquí se mezclan el PvE, PvP, la economía y la exploración, ofreciendo una experiencia dinámica y desafiante que define la esencia del juego.
+
+En estas zonas, que están divididas en colores según el nivel de riesgo (verde, amarillo, rojo y negro), los jugadores pueden recolectar recursos, completar misiones, cazar monstruos, y enfrentarse a otros jugadores. Las áreas verdes y amarillas son más seguras, con PvP limitado o protegido, mientras que las zonas rojas y negras permiten combates abiertos con la posibilidad de perder equipo al morir.
+
+El Mundo Abierto es el lugar donde las alianzas y gremios luchan por el control territorial, establecen fortalezas y bases, y realizan guerras de gran escala conocidas como ZvZ (Zerg vs Zerg). Estas guerras masivas implican la coordinación de cientos de jugadores y pueden decidir el destino de regiones enteras dentro del mapa.
+
+Además, el Mundo Abierto fomenta la exploración y el descubrimiento. Existen mazmorras, campamentos de mobs, recursos raros y eventos dinámicos que mantienen a los jugadores activos y en constante movimiento. Los viajes y el transporte son cruciales, así como la estrategia para evitar ganks o emboscadas en rutas peligrosas.
+
+Finalmente, este entorno abierto permite una gran variedad de estilos de juego, desde el jugador solitario que busca aventura y progreso, hasta los grandes gremios que luchan por la supremacía. La libertad, el riesgo y la recompensa se combinan para crear un universo vivo, donde cada acción tiene consecuencias reales.
+</p>
+
+    <section id="Economía-mercado">
+      <h2>Economía y Mercado en Profundidad</h2>
+      <p>Introducción al sistema económico
+La economía en Albion Online es uno de los pilares fundamentales del juego y uno de sus aspectos más complejos e interesantes. Se trata de una economía completamente impulsada por los jugadores, donde todo el equipo, recursos, y objetos son creados, intercambiados y vendidos por los propios usuarios. No existen NPCs que vendan armas o armaduras; todo depende de la oferta y demanda generada por los jugadores. Este sistema genera un mercado dinámico, vibrante y competitivo que refleja el estado del juego en tiempo real.
+
+Fabricación y recolección como motores económicos
+Cada objeto que utilizas, desde la espada más simple hasta la armadura más poderosa, ha sido fabricado por otros jugadores. Para fabricar, primero necesitas recolectar o comprar materias primas como madera, piedra, metales y cuero. La recolección y el refinado son actividades clave que sostienen la economía y que demandan tiempo, habilidad y estrategias para maximizar la eficiencia.
+
+Las actividades de farmeo y recolección son la base para obtener recursos que luego puedes vender en el mercado o usar para fabricar objetos. Los recolectores especializados pueden hacer buenos ingresos vendiendo materiales, mientras que los artesanos ganan fama y dinero creando equipo y consumibles que luego otros jugadores compran para progresar en el juego.
+
+El mercado global y sus dinámicas
+El mercado global conecta a todos los jugadores y ciudades dentro del mundo de Albion. Puedes comprar o vender ítems en diferentes ciudades, y los precios varían según la oferta, la demanda y la ubicación geográfica. Por ejemplo, ciertos recursos pueden ser más caros en ciudades lejanas debido al coste y riesgo del transporte.
+
+Saber usar el mercado con inteligencia es fundamental. Puedes aprovechar las fluctuaciones de precios para comprar barato y vender caro, o detectar oportunidades cuando un recurso o equipo se vuelve muy demandado debido a eventos o actualizaciones del juego. Algunos jugadores se especializan en el “mercadeo” y obtienen grandes beneficios con estas estrategias.
+
+Control territorial y economía
+Los gremios y alianzas influyen directamente en la economía, ya que controlan territorios ricos en recursos o ubicaciones estratégicas en el mapa. Estos territorios generan ingresos y permiten a sus dueños fabricar ciertos objetos con menores costes o con acceso exclusivo a recursos raros.
+
+El control territorial también puede afectar las rutas de comercio y las zonas seguras para transportar mercancías. Por eso, la política y las guerras entre gremios no solo son batallas por el poder, sino que también tienen un fuerte impacto económico.
+
+Consejos para prosperar en la economía de Albion Online
+Especialízate en una rama económica: Ya sea recolección, fabricación o comercio, elegir una especialidad te ayuda a maximizar beneficios y a ser más eficiente.
+
+Usa el mercado para monitorear precios: Consulta regularmente el mercado global para entender qué recursos o ítems tienen más demanda y ajusta tu producción o ventas.
+
+Aprovecha los eventos: Muchos eventos temporales generan picos en la demanda de ciertos recursos o equipo, lo que puede ser una oportunidad para ganar más oro.
+
+Cuida el transporte: Si decides mover mercancías entre ciudades, hazlo con precaución y en grupo si es posible, para evitar emboscadas y pérdidas.
+
+Diversifica tus fuentes de ingreso: No dependas solo de la recolección o la fabricación; combina actividades para tener un flujo constante de recursos y dinero.
+
+Impacto de la economía en la experiencia de juego
+La economía en Albion Online no solo es una cuestión de ganar plata, sino que afecta la forma en que los jugadores interactúan, colaboran y compiten. Un buen manejo económico permite acceder a mejor equipamiento y oportunidades, mientras que un mal manejo puede limitar la progresión y la participación en contenido de alto nivel.
+
+Entender la economía es también clave para la estrategia en PvP y PvE, ya que el equipo y los recursos son necesarios para sobrevivir y ganar en las diferentes modalidades. Los jugadores que dominan la economía tienen ventaja para equiparse, formar gremios fuertes y dominar territorios.
+</p>
+
+<section id="Guias-consejos">
+<h2>Guias y consejos para principiantes</h2>
+
+<p>
+1. Empieza en Zonas Seguras
+Cuando comienzas tu aventura en Albion Online, es fundamental que te enfoques en las zonas verdes y amarillas del mapa, las áreas consideradas seguras o de bajo riesgo. Estas zonas limitan el PvP, permitiendo a los nuevos jugadores explorar el mundo, aprender mecánicas básicas y recolectar recursos sin la amenaza constante de ser atacados por otros jugadores. Tomarse el tiempo para acostumbrarse a las mecánicas de combate, el movimiento y la gestión del inventario en estas áreas reduce la frustración inicial y mejora la experiencia de juego.
+
+Además, en estas zonas es donde puedes comenzar a construir tu base económica y avanzar en el árbol tecnológico sin la presión del PvP. La reputación y el progreso son más lentos, pero la seguridad te brinda un ambiente ideal para practicar habilidades y comprender las dinámicas del juego. Es recomendable usar estas zonas para subir el nivel de tu personaje, equiparte con mejores armas y familiarizarte con la interfaz y opciones del juego.
+
+No obstante, aunque estas áreas sean más seguras, nunca debes bajar la guardia completamente. Algunos eventos y misiones pueden atraer la atención de jugadores más experimentados o incluso depredadores, por lo que la vigilancia sigue siendo importante. Aprovecha para aprender a moverte con cautela y utiliza el entorno a tu favor.
+
+Por último, aprovecha este tiempo en zonas seguras para establecer relaciones con otros jugadores, formar o unirte a gremios y aprender de la comunidad. Esto será clave para tu éxito futuro, cuando decidas aventurarte en zonas más peligrosas y competitivas.
+
+2. Enfócate en una Especialización Inicial
+Uno de los aspectos más atractivos de Albion Online es la libertad para usar cualquier equipo y habilidades, pero esta libertad también puede ser abrumadora para los principiantes. Para avanzar rápido y eficientemente, es recomendable enfocarse en una especialización inicial, ya sea guerrero cuerpo a cuerpo, arquero, mago, tanque o recolector. Concentrarte en un camino específico te permitirá subir fama y experiencia más rápidamente, lo que se traduce en acceso a equipo y habilidades más poderosas.
+
+Especializarte también te permite dominar las mecánicas y combos de tu rol, aumentando tus posibilidades de éxito en combate y supervivencia. Cada especialización tiene su propio estilo y tácticas; por ejemplo, los guerreros cuerpo a cuerpo se enfocan en resistencia y daño cercano, mientras que los arqueros aprovechan ataques a distancia y movilidad. Elegir una especialización te ayuda a entender mejor las fortalezas y debilidades de tu personaje.
+
+Además, una vez tengas una especialización clara, puedes empezar a fabricar y mejorar tu propio equipo enfocado en ese estilo, lo que reduce costos y mejora tu eficiencia. El árbol de habilidades se vuelve más manejable y puedes planificar tu progreso a largo plazo.
+
+Por último, recuerda que aunque la especialización es recomendable, Albion Online te permite cambiar y experimentar con otras habilidades y roles. Sin embargo, hacerlo sin un plan puede retrasar tu progreso, por eso se aconseja una base sólida antes de diversificar.
+
+3. Aprende a Usar el Mercado
+El mercado de Albion Online es un sistema global que conecta a todos los jugadores, permitiendo comprar y vender equipamiento, recursos y otros objetos en tiempo real. Aprender a usarlo de forma eficiente es clave para progresar y optimizar tu economía. No basta con comprar el equipo más caro o vender todo lo que encuentres; el éxito radica en conocer los precios, la demanda y los ciclos del mercado.
+
+Un buen consejo es analizar los precios antes de hacer una compra o venta. Algunos recursos o ítems tienen precios muy variables según la zona o el momento, por lo que esperar o vender en momentos estratégicos puede maximizar tus ganancias. Usa el mercado para vender los recursos que recolectes y así obtener plata (oro), que te permitirá comprar mejores armas y armaduras cuando las necesites.
+
+Además, el mercado es una excelente herramienta para planificar tus objetivos. Puedes ver qué equipo o materiales te hacen falta para avanzar en tu especialización y ahorrar para ellos. No dudes en aprovechar ofertas, subastas o descuentos temporales.
+
+Finalmente, considera que el mercado también refleja la economía del juego, por lo que influye en la dinámica de gremios, alianzas y conflictos. Conocerlo bien te puede dar ventajas estratégicas a largo plazo, tanto en PvP como en PvE.
+
+4. Únete a un Gremio
+Unirte a un gremio en Albion Online no es solo una opción, sino una de las mejores decisiones que puedes tomar para crecer en el juego. Los gremios ofrecen protección, acceso a contenido grupal y la posibilidad de participar en actividades que serían imposibles en solitario, como guerras ZvZ, control territorial y eventos de gremio.
+
+Además, un gremio te brinda una comunidad donde aprender, compartir recursos y mejorar tus habilidades. Los jugadores más experimentados pueden guiarte, ayudarte a entender estrategias y darte consejos para optimizar tu progreso. Estar en un gremio también significa contar con apoyo en combate y en la gestión económica, lo que reduce la sensación de vulnerabilidad.
+
+Cuando busques un gremio, intenta unirte a uno activo y con una buena comunicación. Los gremios serios organizan eventos, entrenamientos y mantienen una jerarquía que ayuda a los nuevos miembros a integrarse. No temas preguntar o participar activamente, ya que esto potenciará tu experiencia y te hará sentir parte del grupo.
+
+Finalmente, formar parte de un gremio abre las puertas a una dimensión social del juego que va más allá del simple farmeo o combate, permitiéndote disfrutar plenamente de la riqueza del mundo de Albion.
+
+5. Evita Llevar Equipamiento Valioso en Zonas Rojas y Negras
+En las zonas de alto riesgo (rojas y negras), el PvP es abierto y las muertes tienen consecuencias graves: puedes perder tu equipo si mueres en combate. Por ello, una regla esencial para principiantes y veteranos es evitar llevar equipamiento valioso o demasiado avanzado cuando entres a estas zonas.
+
+Llevar solo lo necesario te permite minimizar pérdidas y reducir el estrés durante tus exploraciones o farmeo. Es recomendable usar equipo básico o mediano que puedas reemplazar fácilmente si mueres. De esta manera, aunque pierdas el combate, el impacto en tu progreso será menor.
+
+Además, en estas zonas es clave estar siempre atento, no solo a los mobs, sino a otros jugadores que puedan emboscarte. El entorno es impredecible, y la estrategia muchas veces pasa por la evasión, no por el enfrentamiento directo.
+
+Con el tiempo, a medida que mejores tus habilidades y equipo, podrás aventurarte con ítems más valiosos, pero siempre con precaución y sabiendo que la muerte puede costarte caro.
+</p>
+
+    <section id="videos">
+      <h2>Videos Recomendados</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/9OSumRIo11s?start=3" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/4unNhp1R4OY?start=2" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/5GjVkFWO_Nk?start=5" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/AwuUMhTOYs4?start=3" allowfullscreen></iframe>
+      </div>
+      <p>Para más contenido, visita el <a class="channel-link" href="https://www.youtube.com/@JackFyahYT" target="_blank" rel="noopener noreferrer">canal de JackFyahYT</a>.</p>
+    </section>
+  </div>
+
+<p>Visita el sitio oficial de Albion Online para más información:</p>
+<ul>
+  <li>
+    <a href="https://albiononline.com" target="_blank" rel="noopener noreferrer">
+      Sitio Oficial de Albion Online
+    </a>
+  </li>
+</ul>
+
+  <script>
+    // Buscador que resalta coincidencias sin borrar contenido
+    const searchButton = document.getElementById('search-button');
+    const clearButton = document.getElementById('clear-button');
+    const searchInput = document.getElementById('search-input');
+    const content = document.getElementById('content');
+
+    const originalContent = content.innerHTML;
+
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function highlight(term) {
+      if (!term) return;
+      const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+      content.innerHTML = originalContent.replace(regex, '<mark>$1</mark>');
+    }
+
+    searchButton.addEventListener('click', () => {
+      const term = searchInput.value.trim();
+      if (term === '') {
+        content.innerHTML = originalContent;
+        return;
+      }
+      highlight(term);
+    });
+
+    clearButton.addEventListener('click', () => {
+      searchInput.value = '';
+      content.innerHTML = originalContent;
+    });
+
+    // Permite buscar con Enter
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        searchButton.click();
+      }
+    });
+  </script>
+
+<div id="disqus_thread" style="margin-top: 50px;"></div>
+
+<script>
+  var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = window.location.pathname;
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://APELAPATOS.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<noscript>
+  Por favor activa JavaScript para ver los
+  <a href="https://disqus.com/?ref_noscript">comentarios powered by Disqus.</a>
+</noscript>
+
+<div id="feedback" style="text-align: center; margin: 40px 0;">
+  <h3 style="color: white;">¿Te gustó esta información?</h3>
+  <button id="likeBtn" onclick="vote('like')" style="font-size: 18px; margin-right: 10px;">
+    👍 Me gusta <span id="likeCount">0</span>
+  </button>
+  <button id="dislikeBtn" onclick="vote('dislike')" style="font-size: 18px;">
+    👎 No me gusta <span id="dislikeCount">0</span>
+  </button>
+</div>
+
+<script>
+  let like = parseInt(localStorage.getItem('likeCount')) || 0;
+  let dislike = parseInt(localStorage.getItem('dislikeCount')) || 0;
+  let userVote = localStorage.getItem('userVote'); // "like", "dislike" o null
+
+  // Mostrar los conteos actuales
+  document.getElementById('likeCount').innerText = like;
+  document.getElementById('dislikeCount').innerText = dislike;
+
+  // Si ya votó, deshabilitar botones para que no pueda votar de nuevo
+  if(userVote) {
+    document.getElementById('likeBtn').disabled = true;
+    document.getElementById('dislikeBtn').disabled = true;
+  }
+
+  function vote(type) {
+    if (userVote) {
+      alert("Ya has votado. Gracias por tu opinión.");
+      return; // No permitir votar de nuevo
+    }
+
+    if (type === 'like') {
+      like++;
+      localStorage.setItem('likeCount', like);
+      document.getElementById('likeCount').innerText = like;
+      userVote = 'like';
+    } else {
+      dislike++;
+      localStorage.setItem('dislikeCount', dislike);
+      document.getElementById('dislikeCount').innerText = dislike;
+      userVote = 'dislike';
+    }
+
+    localStorage.setItem('userVote', userVote);
+
+    // Deshabilitar botones después de votar
+    document.getElementById('likeBtn').disabled = true;
+    document.getElementById('dislikeBtn').disabled = true;
+  }
+</script>
+
+</body>
+</html>
